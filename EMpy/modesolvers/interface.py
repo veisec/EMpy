@@ -1,14 +1,12 @@
-from builtins import range
-from builtins import object
 import numpy
 
 
-class ModeSolver(object):
+class ModeSolver:
     def solve(self, *argv):
         raise NotImplementedError()
 
 
-class Mode(object):
+class Mode:
     def get_x(self, x=None, y=None):
         raise NotImplementedError()
 

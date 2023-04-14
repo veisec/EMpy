@@ -1,11 +1,6 @@
 """FDTD Postprocessing.
 
 """
-from __future__ import print_function
-from builtins import str
-from builtins import range
-from builtins import object
-
 import os
 import numpy
 import EMpy.utils
@@ -14,7 +9,7 @@ import pylab
 __author__ = "Lorenzo Bolla"
 
 
-class Input(object):
+class Input:
     """Data structure to handle input files."""
 
     def __init__(self, filename):
@@ -130,7 +125,7 @@ class Input(object):
         f.close()
 
 
-class Param(object):
+class Param:
     """Data structure to handle the param file."""
 
     def __str__(self):
@@ -184,7 +179,7 @@ class Param(object):
         )
 
 
-class Sensor(object):
+class Sensor:
     """Data structure to handle the FFT sensor's data."""
 
     def plot(self, n):
@@ -214,7 +209,7 @@ class Sensor(object):
         return "E1\n%s\nH1\n%s\nE2\n%s\nH2\n%s\n" % (self.E1, self.H1, self.E2, self.H2)
 
 
-class TimeSensor(object):
+class TimeSensor:
     """Data structure to handle the time sensor's data."""
 
     def plot_Ex(self, logplot=False):
@@ -245,7 +240,7 @@ class TimeSensor(object):
         pylab.show()
 
 
-class FDTD(object):
+class FDTD:
     """FDTD.
     Data structure to handle an FDTD simulation. It manages an input file, a param file and the sensors' output.
     It can run a simulation via a system call.
@@ -563,7 +558,7 @@ class FDTD(object):
         # size_of_source = 9 * size_of_int + 5 * size_of_real + 6 * 16 * size_of_char
         # size_of_monitor = (6 + 2) * 6 * size_of_int
 
-        Gb = 1024 ** 3
+        Gb = 1024**3
         max_available_RAM = 32 * Gb
 
         dynamic_alloc_memory = 0
